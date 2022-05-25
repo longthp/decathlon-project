@@ -20,11 +20,12 @@
     * The approach here was to use asynchrous code, waiting for all of the reponses, and then execute the parsing part.
 
 ### <ins>Solution</ins>
-* Decathlon's online store is based on Shopify service, which means I could add the .js or .json to the end of every products url to retreive all the JSON data of the corresponding products.
+* Decathlon's online store is based on Shopify service, which means I could add the .js or .json to the end of every product urls to retreive just the JSON data of the corresponding products.
     * For example: https://www.decathlon.com/products/mens-hiking-pants-nh100-308281.json
-    * 
-* 
-* To handle the complexity of navigating through categories,
+    * Product with its variants | First variant
+      :---: | :---:
+      ![](assets/product_json_02.png) | ![](assets/product_json.png)
+* To handle the large number of urls, we can use asynchronous logic
 
 
 ### <ins>Output</ins>
