@@ -13,9 +13,10 @@
 * Scrape product data for `mens`, `womens`, `kids`, and `babies` categories.
 
 ### <ins>Problems</ins>
-* **`One`**, the site was `too complex`, with `10k plus` of products and various sub-categories, making it even harder to navigate through pages from the `frontend`.
+* **`One`**, the [site](https://www.decathlon.com/) was `too complex`, with `10k plus` of products and various sub-categories, making it even harder to navigate through pages from the `frontend`.
+    ![](assets/site_preview_02.png)
 
-* **`Two`**, there were `way too many urls`. Waiting for each response to comeback and parse the reponse object respectively is `resource heavy`.
+* **`Two`**, there were `way too many urls`. Waiting for each response to comeback and parse the reponse object respectively `might takes forever`.
 
 ### <ins>Solution</ins>
 * **_For all of the product urls_**, I used the [page's sitemap](https://www.decathlon.com/sitemap.xml):
@@ -39,7 +40,7 @@
         </sitemap>
     </sitemapindex>
     ```
-    * There are three **`sitemap_products`** pages in which all the product urls are contained.
+    * So, there are three **`sitemap_products`** pages in which all the product urls are contained.
 
 * **_For the specific piece of information_**, [Decathlon](https://www.decathlon.com/)'s online store is based on **[Shopify](https://www.shopify.com/)** platform, which means I could add the **`.js`** or **`.json`** to the `end` of every `product urls` and retreive just the **`JSON data`** of the corresponding products.
     * For example: https://www.decathlon.com/products/mens-hiking-pants-nh100-308281.json
@@ -48,14 +49,16 @@
     | :---: | :---: |
     | ![](assets/json_output_01.png) | ![](assets/json_output_02.png) |
 
-* **_For handling the large number of urls_**, we can apply `asynchronous` code logic:
+* **_For handling the large number of urls_**, we can apply `asynchronous` code:
     * Wait for all the responses to comeback.
     * Then execute the parsing code.
 
 ### <ins>Output</ins>
 * I used **[Google Colab](https://research.google.com/colaboratory/)** for this task.
-* The execution time was:
-![Execution time](assets/output.png)
+
+    | Execution time |
+    | :---: |
+    | ![Execution time](assets/output.png) |
 
 * Data's schema
 
@@ -76,3 +79,4 @@
     | `rating`, `five_star_reviews`, `total_reviews` | product's rating information | float, int |
 
 ## 2. Exploratory Data Analysis
+Link to Google Colab Notebook
